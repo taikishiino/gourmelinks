@@ -1,30 +1,38 @@
 <template>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="/">
                 <img src="" alt="GourSearch" width="112" height="28">
             </a>
 
-            <div class="navbar-menu is-active">
-                <a class="navbar-item" href="">Home</a>
-                <a class="navbar-item" href="">About</a>
+            <div class="navbar-burger burger" data-target="navbarMenu" @click="showNav = !showNav" :class="{'is-active': showNav}">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </div>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu" :class="{'is-active':showNav}">
+            <div class="navbar-end">
+                <a href="/" v-for="item in items" :key="item.title" class="navbar-item">{{ item.title }}</a>
+            </div>
         </div>
     </nav>
 </template>
 
 <script>
     export default {
-        name: "MyHeader"
+        name: "MyHeader",
+        data: () => ({
+            showNav: false,
+            items: [
+                { title: 'Home', icon: 'home' },
+                { title: 'Place', icon: 'place' },
+                { title: 'Menu', icon: 'menu' }
+            ]
+        })
     }
 </script>
 
 <style scoped>
-
+/**/
 </style>
