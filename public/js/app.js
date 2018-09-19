@@ -12039,7 +12039,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\nheader[data-v-7cf11010], nav[data-v-7cf11010] { background: #f2f2f2;\n}\n.hWarapper[data-v-7cf11010] { width: 1000px; margin: 0 auto;\n}\n", ""]);
 
 // exports
 
@@ -12109,6 +12109,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "MyHeader",
@@ -12127,45 +12135,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    {
-      staticClass: "navbar is-light",
-      attrs: { role: "navigation", "aria-label": "main navigation" }
-    },
-    [
-      _c("div", { staticClass: "navbar-brand" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "navbar-burger burger",
-            class: { "is-active": _vm.showNav },
-            attrs: { "data-target": "navbarMenu" },
-            on: {
-              click: function($event) {
-                _vm.showNav = !_vm.showNav
-              }
-            }
-          },
-          [
-            _c("span", { attrs: { "aria-hidden": "true" } }),
-            _vm._v(" "),
-            _c("span", { attrs: { "aria-hidden": "true" } }),
-            _vm._v(" "),
-            _c("span", { attrs: { "aria-hidden": "true" } })
-          ]
-        )
-      ]),
-      _vm._v(" "),
+  return _c("header", [
+    _c("div", { staticClass: "hWarapper" }, [
       _c(
-        "div",
-        { staticClass: "navbar-menu", class: { "is-active": _vm.showNav } },
-        [_vm._m(1)]
+        "nav",
+        {
+          staticClass: "navbar",
+          attrs: { role: "navigation", "aria-label": "main navigation" }
+        },
+        [
+          _c("div", { staticClass: "navbar-brand" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "navbar-burger burger",
+                class: { "is-active": _vm.showNav },
+                attrs: { "data-target": "navbarMenu" },
+                on: {
+                  click: function($event) {
+                    _vm.showNav = !_vm.showNav
+                  }
+                }
+              },
+              [
+                _c("span", { attrs: { "aria-hidden": "true" } }),
+                _vm._v(" "),
+                _c("span", { attrs: { "aria-hidden": "true" } }),
+                _vm._v(" "),
+                _c("span", { attrs: { "aria-hidden": "true" } })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "navbar-menu", class: { "is-active": _vm.showNav } },
+            [_vm._m(1)]
+          )
+        ]
       )
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -12185,16 +12197,15 @@ var staticRenderFns = [
     return _c("div", { staticClass: "navbar-end" }, [
       _c("div", { staticClass: "navbar-item" }, [
         _c("div", { staticClass: "field is-grouped" }, [
-          _c(
-            "a",
-            {
-              staticClass: "button is-primary",
-              staticStyle: { "margin-right": "10px" }
-            },
-            [_vm._v("無料会員登録")]
-          ),
+          _c("div", { staticClass: "control" }, [
+            _c("a", { staticClass: "button is-primary" }, [
+              _vm._v("無料会員登録")
+            ])
+          ]),
           _vm._v(" "),
-          _c("a", { staticClass: "button is-primary" }, [_vm._v("ログイン")])
+          _c("div", { staticClass: "control" }, [
+            _c("a", { staticClass: "button is-primary" }, [_vm._v("ログイン")])
+          ])
         ])
       ])
     ])
