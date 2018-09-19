@@ -12039,7 +12039,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/**/\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12104,13 +12104,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "MyHeader",
     data: function data() {
         return {
-            showNav: false,
-            items: [{ title: 'Home', icon: 'home' }, { title: 'Place', icon: 'place' }, { title: 'Menu', icon: 'menu' }]
+            showNav: false
         };
     }
 });
@@ -12157,28 +12161,8 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass: "navbar-menu",
-          class: { "is-active": _vm.showNav },
-          attrs: { id: "navbarExampleTransparentExample" }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "navbar-end" },
-            _vm._l(_vm.items, function(item) {
-              return _c(
-                "a",
-                {
-                  key: item.title,
-                  staticClass: "navbar-item",
-                  attrs: { href: "/" }
-                },
-                [_vm._v(_vm._s(item.title))]
-              )
-            })
-          )
-        ]
+        { staticClass: "navbar-menu", class: { "is-active": _vm.showNav } },
+        [_vm._m(1)]
       )
     ]
   )
@@ -12190,8 +12174,29 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "navbar-item", attrs: { href: "/" } }, [
       _c("img", {
-        attrs: { src: "", alt: "GourSearch", width: "112", height: "28" }
+        attrs: { src: "", alt: "Gourmelinks", width: "112", height: "28" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-end" }, [
+      _c("div", { staticClass: "navbar-item" }, [
+        _c("div", { staticClass: "field is-grouped" }, [
+          _c(
+            "a",
+            {
+              staticClass: "button is-primary",
+              staticStyle: { "margin-right": "10px" }
+            },
+            [_vm._v("無料会員登録")]
+          ),
+          _vm._v(" "),
+          _c("a", { staticClass: "button is-primary" }, [_vm._v("ログイン")])
+        ])
+      ])
     ])
   }
 ]
