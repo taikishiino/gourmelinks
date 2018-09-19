@@ -5,16 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- blade側にトークンを埋め込む -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>GourSearch</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
-<div id="app">
-    <Myheader></Myheader>
-    @yield('content')
-    <Myfooter></Myfooter>
-</div>
+    <div id="app">
+        <Myheader></Myheader>
+        <div id="body">
+            @yield('content')
+        </div>
+        <Myfooter></Myfooter>
+    </div>
 
-<script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
