@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {
@@ -11513,5 +11515,82 @@ label.panel-block:hover {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
+}
+
+/* --------------------------------
+	reset
+-------------------------------- */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+blockquote,
+pre,
+div,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+th,
+td,
+form,
+fieldset,
+input,
+textarea {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+select {
+  margin: 0 0 0 0;
+}
+
+/* --------------------------------
+	初期設定
+-------------------------------- */
+
+body {
+  font-family: "\30D2\30E9\30AE\30CE\89D2\30B4   Pro W3", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", "Lucida Grande", Verdana, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* --------------------------------
+	共通レイアウト
+-------------------------------- */
+
+body {
+  min-width: 1000px;
+  margin: auto;
+  position: relative;
+  zoom: 1;
+}
+
+#body {
+  width: 980px;
+  margin: 0 auto;
+}
+
+#contentWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  width: 250px;
+}
+
+#main {
+  width: 730px;
 }
 
