@@ -26,4 +26,17 @@
     };
     firebase.initializeApp(config);
 
+    /* firebaseサービスのインスタンス定義 */
+    // firestoreインスタンスを定義
+    const firestore = firebase.firestore();
+    // dbのtimestampを設定
+    firestore.settings({
+        timestampsInSnapshots: true
+    });
+    // Cloud Storageインスタンスを定義
+    const storage = firebase.storage();
+    // authインスタンスを定義
+    const auth = firebase.auth();
+    let me = null;
+
 })();

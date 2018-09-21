@@ -547,6 +547,19 @@ module.exports = __webpack_require__(21);
         messagingSenderId: "681142273951"
     };
     firebase.initializeApp(config);
+
+    /* firebaseサービスのインスタンス定義 */
+    // firestoreインスタンスを定義
+    var firestore = firebase.firestore();
+    // dbのtimestampを設定
+    firestore.settings({
+        timestampsInSnapshots: true
+    });
+    // Cloud Storageインスタンスを定義
+    var storage = firebase.storage();
+    // authインスタンスを定義
+    var auth = firebase.auth();
+    var me = null;
 })();
 
 /***/ }),
