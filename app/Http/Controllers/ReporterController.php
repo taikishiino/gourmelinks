@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Reporter;
 
 class ReporterController extends Controller
 {
@@ -13,7 +14,7 @@ class ReporterController extends Controller
      */
     public function index()
     {
-        //
+        return view('reporters.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class ReporterController extends Controller
      */
     public function create()
     {
-        //
+        return view('reporters.create');
     }
 
     /**
@@ -45,7 +46,7 @@ class ReporterController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('reporters.show');
     }
 
     /**
@@ -56,7 +57,7 @@ class ReporterController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('reporters.edit');
     }
 
     /**
