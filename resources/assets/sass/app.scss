@@ -35,8 +35,36 @@ body { min-width: 1000px; margin: auto; position: relative; zoom: 1; }
 
 #body { width: 980px; margin: 0 auto; }
 
-// レイアウト
+/*レイアウト*/
 #contentWrapper { display: flex; width: 100%; }
-#sidebar { width: 250px; }
-#main { width: 730px; }
+#sidebar { width: 250px;
+  .sidebarWarapper { padding-right: 20px; }
+}
+#main { width: 730px; border-left: 1px solid #f2f2f2;
+  .mainWarapper { padding-left: 30px; }
+}
 
+/*セクションタイトル*/
+h2 { font-size: 20px;
+  &.headerTitle { padding-bottom: 5px; margin-bottom: 10px; font-size: 18px; font-weight: bold; }
+  &.headerSeparator { border-bottom: 1px solid #FF6633; }
+}
+
+/*広告ボックス*/
+.adsense { width: 100%; height:100%; object-fit: cover; }
+
+
+
+
+/* --------------------------------
+	共通レイアウト
+-------------------------------- */
+/*** top ***/
+/*人気グルメ*/
+.popularItem { height: 150px; }
+.newItem { height: 230px; }
+.popularItem, .newItem { position: relative; display: inline-block; width: 230px;
+  & a { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+  & p { position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; color: white; background: rgba(0, 0, 0, 0.5); }
+  & img { width: 100%; height: 100%; object-fit: cover; }
+}

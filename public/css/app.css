@@ -11579,6 +11579,8 @@ body {
   margin: 0 auto;
 }
 
+/*レイアウト*/
+
 #contentWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11590,7 +11592,93 @@ body {
   width: 250px;
 }
 
+#sidebar .sidebarWarapper {
+  padding-right: 20px;
+}
+
 #main {
   width: 730px;
+  border-left: 1px solid #f2f2f2;
+}
+
+#main .mainWarapper {
+  padding-left: 30px;
+}
+
+/*セクションタイトル*/
+
+h2 {
+  font-size: 20px;
+}
+
+h2.headerTitle {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h2.headerSeparator {
+  border-bottom: 1px solid #FF6633;
+}
+
+/*広告ボックス*/
+
+.adsense {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* --------------------------------
+	共通レイアウト
+-------------------------------- */
+
+/*** top ***/
+
+/*人気グルメ*/
+
+.popularItem {
+  height: 150px;
+}
+
+.newItem {
+  height: 230px;
+}
+
+.popularItem,
+.newItem {
+  position: relative;
+  display: inline-block;
+  width: 230px;
+}
+
+.popularItem a,
+.newItem a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.popularItem p,
+.newItem p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popularItem img,
+.newItem img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
