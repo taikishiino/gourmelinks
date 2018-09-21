@@ -521,18 +521,46 @@ module.exports = __webpack_require__(21);
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// bootstrap読み込むと表示速度が4秒程増加
-// require('./bootstrap');
+(function () {
+    // セキュリティチェック
+    'use strict';
 
-window.Vue = __webpack_require__(6);
+    // vueのimport
 
-var Myheader = __webpack_require__(10);
-var Myfooter = __webpack_require__(16);
+    window.Vue = __webpack_require__(6);
 
-var app = new Vue({
-    el: '#app',
-    components: { Myheader: Myheader, Myfooter: Myfooter }
-});
+    var Myheader = __webpack_require__(10);
+    var Myfooter = __webpack_require__(16);
+
+    var app = new Vue({
+        el: '#app',
+        components: { Myheader: Myheader, Myfooter: Myfooter }
+    });
+
+    // firebaseの連携
+    var config = {
+        apiKey: "AIzaSyAdL38AiWcLB35H9EvHsedKNE3oAcWxI7U",
+        authDomain: "gourmelinks.firebaseapp.com",
+        databaseURL: "https://gourmelinks.firebaseio.com",
+        projectId: "gourmelinks",
+        storageBucket: "gourmelinks.appspot.com",
+        messagingSenderId: "681142273951"
+    };
+    firebase.initializeApp(config);
+
+    /* firebaseサービスのインスタンス定義 */
+    // firestoreインスタンスを定義
+    var firestore = firebase.firestore();
+    // dbのtimestampを設定
+    firestore.settings({
+        timestampsInSnapshots: true
+    });
+    // Cloud Storageインスタンスを定義
+    var storage = firebase.storage();
+    // authインスタンスを定義
+    var auth = firebase.auth();
+    var me = null;
+})();
 
 /***/ }),
 /* 6 */

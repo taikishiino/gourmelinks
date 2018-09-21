@@ -19,6 +19,12 @@
         <Myfooter></Myfooter>
     </div>
 
+
+    <!-- firebaseの連携 -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
