@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>TOP</h1>
+    <h1>TOP</h1><a href="/reporters">ユーザーtopへ</a>
     <div id="contentWrapper">
         <section id="sidebar">
             <div class="sidebarWarapper">
