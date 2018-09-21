@@ -11631,11 +11631,50 @@ h2.headerSeparator {
      object-fit: cover;
 }
 
-/* --------------------------------
-	共通レイアウト
--------------------------------- */
+/* コンテンツ共通レイアウト */
 
-/*** top ***/
+.popularItem,
+.newItem,
+.userContents {
+  position: relative;
+  display: inline-block;
+  width: 230px;
+}
+
+.popularItem a,
+.newItem a,
+.userContents a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.popularItem p,
+.newItem p,
+.userContents p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popularItem img,
+.newItem img,
+.userContents img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* --------------------------------
+	TOP
+-------------------------------- */
 
 /*人気グルメ*/
 
@@ -11647,38 +11686,46 @@ h2.headerSeparator {
   height: 230px;
 }
 
-.popularItem,
-.newItem {
+/* --------------------------------
+	レポーターページ
+-------------------------------- */
+
+.userImg {
   position: relative;
-  display: inline-block;
-  width: 230px;
+  overflow: hidden;
+  padding-bottom: 100%;
+  border: 1px #adb5bd solid;
+  border-radius: 50%;
 }
 
-.popularItem a,
-.newItem a {
+.userImg img {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.popularItem p,
-.newItem p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.popularItem img,
-.newItem img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.userContents {
+  height: 230px;
+}
+
+/* ------------------------------
+   レポーター作成・編集
+------------------------------ */
+
+#reporterCreate {
+  margin: 30px 0;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+}
+
+.reporterCreateWrapper {
+  padding: 30px;
+  border-left: 1px solid #f2f2f2;
+}
+
+.snsform {
+  margin: 10px 0;
 }
 
