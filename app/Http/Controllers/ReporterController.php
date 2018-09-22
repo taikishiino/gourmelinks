@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reporter;
+use App\Gourmet;
 
 class ReporterController extends Controller
 {
@@ -54,7 +55,9 @@ class ReporterController extends Controller
      */
     public function show(Reporter $reporter)
     {
-        return view('reporters.show', ['reporter' => $reporter]);
+        // $reporterの持っている$gourmetsを所得
+        $gourmets = Gourmet::where('reporter_id', $reporter->id)->get();
+        return view('reporters.show', ['reporter' => $reporter, 'gourmets' => $gourmets]);
     }
 
     /**

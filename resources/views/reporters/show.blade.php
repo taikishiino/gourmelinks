@@ -44,6 +44,9 @@
                                 <div class="column">
                                     <a href="{{ url('/reporters/'.$reporter->id.'/edit') }}" class="button is-small is-fullwidth">プロフィール編集</a>
                                 </div>
+                                <div class="column">
+                                    <a href="{{ url('/gourmets/create') }}" class="button is-small is-fullwidth">グルメ投稿</a>
+                                </div>
                             </div>
                             <div class="box">
                                 <div>Twitter: <a href="{{ url("https://twitter.com/{$reporter->twitter}") }}" target="_blank">{{ $reporter->twitter }}</a></div>
@@ -59,14 +62,14 @@
                     <p>{{ $reporter->comment }}</p>
                 </div>
                 <div id="idxUserContents">
-                    @for($i=0; $i<10; $i++)
+                    @foreach($gourmets as $gourmet)
                         <div class="userContents">
                             <a href="{{ url('/gourmets/1') }}">
                                 <img src="{{ asset('img/sample.png') }}" alt="" class="object-fit">
-                                <p>料理名</p>
+                                <p>{{ $gourmet->gourmet_name }}</p>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- /#idxUserContents -->
             </div>
