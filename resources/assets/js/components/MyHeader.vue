@@ -18,7 +18,7 @@
                         <div class="navbar-item">
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <a class="button is-primary">無料会員登録</a>
+                                    <a href="/reporters/create" class="button is-primary">無料会員登録</a>
                                 </div>
                                 <div class="control">
                                     <a class="button is-primary">ログイン</a>
