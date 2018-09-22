@@ -11672,6 +11672,32 @@ h2.headerSeparator {
      object-fit: cover;
 }
 
+/* ファイルform */
+
+#fileUp {
+  display: none;
+}
+
+label .originalFileUp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(242, 242, 242, 0.5);
+  border: 2px dashed #CCCCCC;
+  cursor: pointer;
+}
+
 /* --------------------------------
 	TOP
 -------------------------------- */

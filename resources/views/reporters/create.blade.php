@@ -2,9 +2,23 @@
 @section('content')
     <div id="reporterCreate">
         <div class="reporterCreateWrapper">
-            <form action="{{ url('reporters') }}" method="post">
+            <form action="{{ url('reporters') }}" method="post" autocomplete="off">
                 @csrf
                 @method('POST')
+                <div class="columns is-mobile">
+                    <div class="column is-one-third">
+                        <form autocomplete="off">
+                            <div class="image is-square">
+                                <label>
+                                    <div class="originalFileUp">プロフィール写真</div>
+                                    <input type="file" id="fileUp">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.columns -->
+
                 <div class="field">
                     <label class="label">ユーザーネーム</label>
                     <div class="control">

@@ -37,7 +37,7 @@
                             <img src="{{ asset('/img/sample.png') }}" alt="">
                         </div>
                     </div>
-                    {{--<div class="column">
+                    <div class="column">
                         <div class="userRight">
                             <div class="columns">
                                 <div class="column" style="font-size: 1.5em;">{{ $reporter->name }}</div>
@@ -52,11 +52,11 @@
                             </div>
                         </div>
                         <!-- /.userRight -->
-                    </div>--}}
+                    </div>
                 </div>
                 <!-- /.columns -->
                 <div class="box">
-                    <p>コメント</p>
+                    <p>{{ $reporter->comment }}</p>
                 </div>
                 <div id="idxUserContents">
                     @for($i=0; $i<10; $i++)

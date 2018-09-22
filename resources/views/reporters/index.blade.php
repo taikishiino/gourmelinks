@@ -32,15 +32,13 @@
         <section id="main">
             <div class="mainWarapper">
                 <div id="idxNewItem">
-                    <h2 class="headerTitle headerSeparator">新着ユーザー</h2>
-                    @for($i=0; $i<14; $i++)
-                        <div class="newItem">
+                    @foreach($reporters as $reporter)
+                        <div class="">
                             <a href="{{ url('/reporters/1') }}">
-                                <img src="{{ asset('img/sample.png') }}" alt="">
-                                <p>ユーザー名</p>
+                                <p>{{ $reporter->name }}</p>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- .idxNewItem -->
             </div>

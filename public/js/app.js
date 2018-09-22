@@ -560,6 +560,27 @@ module.exports = __webpack_require__(21);
     // authインスタンスを定義
     var auth = firebase.auth();
     var me = null;
+
+    // formインスタンスを定義
+    var form = document.querySelector('form');
+    // fileUpインスタンスを作成
+    var fileUp = document.getElementById("fileUp");
+    // imgSampleインスタンスを作成
+    var imgSample = document.getElementById("imgSample");
+
+    // グローバル変数を定義
+    var file_name = void 0;
+    var blob = void 0;
+
+    // fileUpの変更で処理開始（変更があった要素がeで返される）
+    fileUp.addEventListener("change", function (e) {
+        var file = e.target.files;
+        // fileの名前を取得
+        file_name = file[0].name;
+        // blob形式に変換
+        blob = new Blob(file, { type: "image/jpeg" });
+        console.warn(blob);
+    });
 })();
 
 /***/ }),
@@ -12226,9 +12247,14 @@ var staticRenderFns = [
       _c("div", { staticClass: "navbar-item" }, [
         _c("div", { staticClass: "field is-grouped" }, [
           _c("div", { staticClass: "control" }, [
-            _c("a", { staticClass: "button is-primary" }, [
-              _vm._v("無料会員登録")
-            ])
+            _c(
+              "a",
+              {
+                staticClass: "button is-primary",
+                attrs: { href: "/reporters/create" }
+              },
+              [_vm._v("無料会員登録")]
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "control" }, [

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="reporterCreate">
+    <div id="reporterCreate">
         <div class="columns is-gapless">
             <div class="column is-one-quarter">
                 <div class="reporterCreate_tabs">
@@ -10,8 +10,8 @@
                 </div>
             </div>
             <div class="column">
-                <div class="reporterCreate_box">
-                    <form action="{{ url('/reporters/'.$reporter->id) }}" method="post">
+                <div class="reporterCreateWrapper">
+                    <form action="{{ url('/reporters/'.$reporter->id) }}" method="post" autocomplete="off">
                         @csrf
                         @method('PUT')
                         <div class="field">
