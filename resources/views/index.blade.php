@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>TOP</h1><a href="/reporters">ユーザーtopへ</a>
+    <h1>TOP</h1><a href="{{ url('/reporters') }}">ユーザーtopへ</a>｜<a href="{{ url('/gourmets') }}">グルメ一覧へ</a>
     <div id="contentWrapper">
         <section id="sidebar">
             <div class="sidebarWarapper">
@@ -33,14 +33,14 @@
             <div class="mainWarapper">
                 <div id="idxPopularItem">
                     <h2 class="headerTitle headerSeparator">人気グルメ</h2>
-                    @for($i=0; $i<3; $i++)
+                    @foreach($gourmets as $gourmet)
                         <div class="popularItem">
                             <a href="{{ url('/gourmets') }}">
                                 <img src="{{ asset('img/sample.png') }}" alt="">
-                                <p>グルメ名</p>
+                                <p>{{ $gourmet->gourmet_name }}</p>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- /.idxPopularItem -->
                 <div id="areaSearch">
@@ -52,14 +52,14 @@
                 <!-- .areaSearch -->
                 <div id="idxNewItem">
                     <h2 class="headerTitle headerSeparator">新着グルメ</h2>
-                    @for($i=0; $i<14; $i++)
+                    @foreach($gourmets as $gourmet)
                         <div class="newItem">
                             <a href="{{ url('/gourmets/1') }}">
                                 <img src="{{ asset('img/sample.png') }}" alt="">
-                                <p>料理名</p>
+                                <p>{{ $gourmet->gourmet_name }}</p>
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- .idxNewItem -->
             </div>
