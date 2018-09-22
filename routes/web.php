@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+/* top */
+Route::get('/','HomeController@index');
 
 /* reporterCRUDのルーティング */
 Route::resource('reporters', 'ReporterController');
+/* gourmetCRUDのルーティング */
+Route::resource('gourmets', 'GourmetController');

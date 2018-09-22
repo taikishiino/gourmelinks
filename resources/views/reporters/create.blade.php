@@ -7,14 +7,14 @@
                 @method('POST')
                 <div class="columns is-mobile">
                     <div class="column is-one-third">
-                        <form autocomplete="off">
+                        {{--<form autocomplete="off">
                             <div class="image is-square">
                                 <label>
                                     <div class="originalFileUp">プロフィール写真</div>
                                     <input type="file" id="fileUp">
                                 </label>
                             </div>
-                        </form>
+                        </form>--}}
                     </div>
                 </div>
                 <!-- /.columns -->
