@@ -14,7 +14,8 @@ class ReporterController extends Controller
      */
     public function index()
     {
-        return view('reporters.index');
+        $reporters = Reporter::latest()->get();
+        return view('reporters.index', ['reporters' => $reporters]);
     }
 
     /**
@@ -35,7 +36,14 @@ class ReporterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reporter = new Reporter;
+        $reporter->name = $request->name;
+        $reporter->twitter = $request->twitter;
+        $reporter->instagram = $request->instagram;
+        $reporter->facebook = $request->facebook;
+        $reporter->comment = $request->comment;
+        $reporter->save();
+        return redirect('reporters/'.$reporter->id);
     }
 
     /**
@@ -44,9 +52,9 @@ class ReporterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Reporter $reporter)
     {
-        return view('reporters.show');
+        return view('reporters.show', ['reporter' => $reporter]);
     }
 
     /**
@@ -55,9 +63,9 @@ class ReporterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Reporter $reporter)
     {
-        return view('reporters.edit');
+        return view('reporters.edit', ['reporter' => $reporter]);
     }
 
     /**
@@ -67,9 +75,15 @@ class ReporterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Reporter $reporter)
     {
-        //
+        $reporter->name = $request->name;
+        $reporter->twitter = $request->twitter;
+        $reporter->instagram = $request->instagram;
+        $reporter->facebook = $request->facebook;
+        $reporter->comment = $request->comment;
+        $reporter->save();
+        return redirect('reporters/'.$reporter->id);
     }
 
     /**
