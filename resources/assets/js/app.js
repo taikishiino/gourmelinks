@@ -7,10 +7,12 @@
 
     let Myheader = require('./components/MyHeader.vue');
     let Myfooter = require('./components/MyFooter.vue');
+    // registコンポーネント
+    let Regist = require('./components/MyRegist.vue');
 
     const app = new Vue({
         el: '#app',
-        components:{Myheader,Myfooter}
+        components:{Myheader,Myfooter,Regist}
     });
 
 

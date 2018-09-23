@@ -15,6 +15,9 @@
 /* top */
 Route::get('/','HomeController@index');
 
+/* regist */
+Route::get('/regist','HomeController@regist');
+
 /* reporterCRUDのルーティング */
 Route::resource('reporters', 'ReporterController');
 /* gourmetCRUDのルーティング */

@@ -16,4 +16,9 @@ class HomeController extends Controller
         $gourmets = Gourmet::latest()->get();
         return view('index', ['gourmets' => $gourmets]);
     }
+
+    public function regist()
+    {
+        return view('regist');
+    }
 }
