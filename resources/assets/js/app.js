@@ -35,32 +35,5 @@
     firestore.settings({
         timestampsInSnapshots: true
     });
-    // Cloud Storageインスタンスを定義
-    const storage = firebase.storage();
-    // authインスタンスを定義
-    const auth = firebase.auth();
-    let me = null;
-
-
-    // formインスタンスを定義
-    const form = document.querySelector('form');
-    // fileUpインスタンスを作成
-    const fileUp = document.getElementById("fileUp");
-    // imgSampleインスタンスを作成
-    const imgSample = document.getElementById("imgSample");
-
-    // グローバル変数を定義
-    let file_name;
-    let blob;
-
-    // fileUpの変更で処理開始（変更があった要素がeで返される）
-    fileUp.addEventListener("change", e => {
-        let file = e.target.files;
-        // fileの名前を取得
-        file_name = file[0].name;
-        // blob形式に変換
-        blob = new Blob(file, { type: "image/jpeg" });
-        console.warn(blob);
-    });
 
 })();
