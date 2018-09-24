@@ -67,33 +67,6 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -197,6 +170,33 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -514,7 +514,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(5);
-module.exports = __webpack_require__(24);
+module.exports = __webpack_require__(27);
 
 
 /***/ }),
@@ -531,12 +531,18 @@ module.exports = __webpack_require__(24);
 
     var Myheader = __webpack_require__(10);
     var Myfooter = __webpack_require__(16);
-    // registコンポーネント
+    // authコンポーネント
     var Regist = __webpack_require__(21);
+    var Login = __webpack_require__(24);
 
     var app = new Vue({
         el: '#app',
-        components: { Myheader: Myheader, Myfooter: Myfooter, Regist: Regist }
+        components: {
+            Myheader: Myheader,
+            Myfooter: Myfooter,
+            Regist: Regist,
+            Login: Login
+        }
     });
 
     // firebaseの連携
@@ -549,14 +555,6 @@ module.exports = __webpack_require__(24);
         messagingSenderId: "681142273951"
     };
     firebase.initializeApp(config);
-
-    /* firebaseサービスのインスタンス定義 */
-    // firestoreインスタンスを定義
-    var firestore = firebase.firestore();
-    // dbのtimestampを設定
-    firestore.settings({
-        timestampsInSnapshots: true
-    });
 })();
 
 /***/ }),
@@ -11523,7 +11521,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(7).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7).setImmediate))
 
 /***/ }),
 /* 7 */
@@ -11593,7 +11591,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -11786,7 +11784,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(9)))
 
 /***/ }),
 /* 9 */
@@ -11987,7 +11985,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(11)
 }
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(14)
 /* template */
@@ -12142,13 +12140,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "MyHeader",
     data: function data() {
         return {
-            showNav: false
+            showNav: false,
+            authUser: null
         };
+    },
+    methods: {
+        signOut: function signOut() {
+            firebase.auth().signOut().then(function () {
+                firebase.auth().onAuthStateChanged(function () {
+                    alert('Logouted!!');
+                    location.href = "/";
+                });
+            }).catch(function (error) {
+                alert(error.message + 'm(_ _)m');
+            });
+        }
     }
 });
 
@@ -12197,7 +12211,28 @@ var render = function() {
           _c(
             "div",
             { staticClass: "navbar-menu", class: { "is-active": _vm.showNav } },
-            [_vm._m(1)]
+            [
+              _c("div", { staticClass: "navbar-end" }, [
+                _c("div", { staticClass: "navbar-item" }, [
+                  _c("div", { staticClass: "field is-grouped" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "control" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "button is-primary",
+                          on: { click: _vm.signOut }
+                        },
+                        [_vm._v("ログアウト")]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ]
           )
         ]
       )
@@ -12219,21 +12254,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-end" }, [
-      _c("div", { staticClass: "navbar-item" }, [
-        _c("div", { staticClass: "field is-grouped" }, [
-          _c("div", { staticClass: "control" }, [
-            _c(
-              "a",
-              { staticClass: "button is-primary", attrs: { href: "/regist" } },
-              [_vm._v("レポーターになる")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("a", { staticClass: "button is-primary" }, [_vm._v("ログイン")])
-          ])
-        ])
+    return _c("div", { staticClass: "control" }, [
+      _c(
+        "a",
+        { staticClass: "button is-primary", attrs: { href: "/regist" } },
+        [_vm._v("レポーターになる")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control" }, [
+      _c("a", { staticClass: "button is-primary", attrs: { href: "/login" } }, [
+        _vm._v("ログイン")
       ])
     ])
   }
@@ -12256,7 +12291,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(17)
 }
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(19)
 /* template */
@@ -12406,7 +12441,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(22)
 /* template */
@@ -12489,16 +12524,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         register: function register() {
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password);
-            this.email = '';
-            this.password = '';
-            location.href = "/login";
-        },
-        signOut: function signOut() {
-            firebase.auth().signOut();
-        },
-        signIn: function signIn() {
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(function () {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    alert('UserId: ' + user.uid + 'Email: ' + user.email);
+                    location.href = "/login";
+                });
+            }).catch(function (error) {
+                alert(error.message + 'm(_ _)m');
+            });
         }
     }
 });
@@ -12610,6 +12643,189 @@ if (false) {
 
 /***/ }),
 /* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(25)
+/* template */
+var __vue_template__ = __webpack_require__(26)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/MyLogin.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2e54e2b6", Component.options)
+  } else {
+    hotAPI.reload("data-v-2e54e2b6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'Login',
+    data: function data() {
+        return {
+            email: '',
+            password: ''
+        };
+    },
+
+    methods: {
+        signIn: function signIn() {
+            firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(function () {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    alert('logined!! UserId: ' + user.uid + 'Email: ' + user.email);
+                    location.href = "/";
+                });
+            }).catch(function (error) {
+                alert(error.message + 'm(_ _)m');
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Email")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.email,
+              expression: "email"
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "email", placeholder: "Email", required: "" },
+          domProps: { value: _vm.email },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.email = $event.target.value
+            }
+          }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Password")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.password,
+              expression: "password"
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "password", placeholder: "Password", required: "" },
+          domProps: { value: _vm.password },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.password = $event.target.value
+            }
+          }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c("button", { staticClass: "button", on: { click: _vm.signIn } }, [
+          _vm._v("ログイン")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2e54e2b6", module.exports)
+  }
+}
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

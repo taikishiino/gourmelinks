@@ -7,14 +7,19 @@
 
     let Myheader = require('./components/MyHeader.vue');
     let Myfooter = require('./components/MyFooter.vue');
-    // registコンポーネント
+    // authコンポーネント
     let Regist = require('./components/MyRegist.vue');
+    let Login = require('./components/MyLogin.vue');
 
     const app = new Vue({
         el: '#app',
-        components:{Myheader,Myfooter,Regist}
+        components:{
+            Myheader,
+            Myfooter,
+            Regist,
+            Login
+        }
     });
-
 
 
     // firebaseの連携
@@ -27,13 +32,5 @@
         messagingSenderId: "681142273951"
     };
     firebase.initializeApp(config);
-
-    /* firebaseサービスのインスタンス定義 */
-    // firestoreインスタンスを定義
-    const firestore = firebase.firestore();
-    // dbのtimestampを設定
-    firestore.settings({
-        timestampsInSnapshots: true
-    });
 
 })();
