@@ -16,7 +16,9 @@
 Route::get('/','HomeController@index');
 
 /* regist */
-Route::get('/regist','HomeController@regist');
+Route::get('regist','HomeController@regist');
+/* login */
+Route::get('login','HomeController@login');
 
 /* reporterCRUDのルーティング */
 Route::resource('reporters', 'ReporterController');

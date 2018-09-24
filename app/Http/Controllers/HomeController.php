@@ -19,6 +19,10 @@ class HomeController extends Controller
 
     public function regist()
     {
-        return view('regist');
+        return view('auth/regist');
+    }
+    public function login()
+    {
+        return view('auth/login');
     }
 }

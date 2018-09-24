@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="register" autocomplete="off">
+    <div>
         <div class="field">
             <label class="label">Email</label>
             <div class="control">
@@ -12,18 +12,17 @@
                 <input type="password" v-model="password" placeholder="Password" class="input" required>
             </div>
         </div>
-
         <div class="field is-grouped">
             <div class="control">
-                <button type="submit" class="button is-link">新規登録する</button>
+                <button @click="signIn" class="button">ログイン</button>
             </div>
         </div>
-    </form>
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'Regist',
+        name: 'Login',
         data() {
             return {
                 email: '',
@@ -31,12 +30,12 @@
             }
         },
         methods: {
-            register () {
-                firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+            signIn () {
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                     .then( () => {
                         firebase.auth().onAuthStateChanged( user => {
-                            alert('UserId: ' + user.uid + 'Email: ' + user.email);
-                            location.href = "/login";
+                            alert('logined!! UserId: ' + user.uid + 'Email: ' + user.email);
+                            location.href = "/";
                         });
                     })
                     .catch(error => {
