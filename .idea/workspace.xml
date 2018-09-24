@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f19f1a3d-4611-4c8c-81b2-f15e9312f1c9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/assets/js/components/MyLogin.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/components/MyHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/components/MyHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/components/MyRegist.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/components/MyRegist.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/regist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/regist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reporters/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reporters/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/" />
@@ -96,17 +88,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -293,93 +275,6 @@
               <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="reporters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gourmelinks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gourmelinks" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -553,23 +448,36 @@
       <option name="project" value="LOCAL" />
       <updated>1537788867029</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="login,registの実装">
+      <created>1537807423453</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1537807423453</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Myheader.vueにlogout処理を追加">
+      <created>1537807489504</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1537807489504</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48527000" />
+    <option name="totallyTimeSpent" value="48806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969698" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16242424" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19384836" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16242424" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19384836" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
@@ -646,7 +554,9 @@
     <MESSAGE value="reporterマイグレーションを作成" />
     <MESSAGE value="gourmetのCRUD機能を実装" />
     <MESSAGE value="regist機能を実装" />
-    <option name="LAST_COMMIT_MESSAGE" value="regist機能を実装" />
+    <MESSAGE value="login,registの実装" />
+    <MESSAGE value="Myheader.vueにlogout処理を追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="Myheader.vueにlogout処理を追加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -799,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -862,6 +765,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
         </state>
       </provider>
     </entry>

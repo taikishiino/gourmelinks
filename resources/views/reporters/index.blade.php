@@ -34,7 +34,7 @@
                 <div id="idxNewItem">
                     @foreach($reporters as $reporter)
                         <div class="">
-                            <a href="{{ url('/reporters/1') }}">
+                            <a href="{{ url('/reporters/'.$reporter->id) }}">
                                 <p>{{ $reporter->name }}</p>
                             </a>
                         </div>
