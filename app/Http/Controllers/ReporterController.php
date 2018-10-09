@@ -59,6 +59,10 @@ class ReporterController extends Controller
         $gourmets = Gourmet::where('reporter_id', $reporter->id)->get();
         return view('reporters.show', ['reporter' => $reporter, 'gourmets' => $gourmets]);
     }
+    public function account()
+    {
+        return view('reporters.account');
+    }
 
     /**
      * Show the form for editing the specified resource.
