@@ -17,6 +17,8 @@ Route::get('/','HomeController@index');
 
 /* regist */
 Route::get('regist','HomeController@regist');
+/* regist */
+Route::get('new','HomeController@new');
 /* login */
 Route::get('login','HomeController@login');
 
@@ -24,3 +26,6 @@ Route::get('login','HomeController@login');
 Route::resource('reporters', 'ReporterController');
 /* gourmetCRUDのルーティング */
 Route::resource('gourmets', 'GourmetController');
+
+/* signin後のアカウントページ */
+Route::get('reporters/{reporter}','ReporterController@account');
